@@ -6,6 +6,20 @@
 Singularity recipe for [ghcal](https://github.com/IonicaBizau/ghcal).
 
 ```
+singularity inspect ghcal.simg
+{
+    "WEBSITE": "http://www.cbd.cmu.edu/icaoberg",
+    "org.label-schema.usage.singularity.deffile.bootstrap": "docker",
+    "org.label-schema.usage.singularity.deffile": "Singularity",
+    "AUTHOR": "icaoberg",
+    "org.label-schema.schema-version": "1.0",
+    "org.label-schema.usage.singularity.deffile.includecmd": "yes",
+    "org.label-schema.build-size": "802MB",
+    "org.label-schema.usage.singularity.deffile.from": "ubuntu:16.04",
+    "org.label-schema.build-date": "Sun,_10_Feb_2019_22:57:36_-0500",
+    "org.label-schema.usage.singularity.version": "2.6.0-dist",
+    "EMAIL": "icaoberg@cmu.edu"
+}
 ```
 
 ## Download
