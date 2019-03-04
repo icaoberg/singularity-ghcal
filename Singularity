@@ -18,11 +18,11 @@ IncludeCmd: yes
     ln -s /usr/bin/nodejs /usr/bin/node
     npm install --global ghcal
 
-    mkdir /scratch
-    mkdir /share
-    mkdir /images
-    mkdir /projects
-    mkdir /containers
+    if [ ! -d /images ]; then mkdir /images; fi
+    if [ ! -d /projects ]; then mkdir /containers; fi
+    if [ ! -d /containers ]; then mkdir /containers; fi
+    if [ ! -d /share ]; then mkdir /share; fi
+    if [ ! -d /scratch ]; then mkdir /scratch; fi
 
 ####################################################################################
 %appenv ghcal
