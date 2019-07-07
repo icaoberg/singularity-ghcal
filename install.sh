@@ -17,6 +17,9 @@ if [ ! -f $DIRECTORY/$(echo $IMAGE | cut -d"-" -f2).simg ]; then
 	mv -v $(echo $IMAGE | cut -d"-" -f2).simg $DIRECTORY
 fi
 
+# ┌─────┐
+# │ghcal│
+# └─────┘
 cat << EOF > ~/bin/ghcal
 #!/bin/bash
 
