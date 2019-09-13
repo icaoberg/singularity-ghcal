@@ -1,5 +1,10 @@
 # ghcal
 [![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/2337)
+[![Build Status](https://travis-ci.org/icaoberg/singularity-ghcal.svg?branch=master)](https://travis-ci.org/icaoberg/singularity-ghcal)
+[![GitHub issues](https://img.shields.io/github/issues/icaoberg/singularity-ghcal.svg)](https://github.com/icaoberg/singularity-ghcal/issues)
+[![GitHub forks](https://img.shields.io/github/forks/icaoberg/singularity-ghcal.svg)](https://github.com/icaoberg/singularity-ghcal/network)
+[![GitHub stars](https://img.shields.io/github/stars/icaoberg/singularity-ghcal.svg)](https://github.com/icaoberg/singularity-ghcal/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-GPLv3-blue.svg)](https://www.gnu.org/licenses/quick-guide-gplv3.en.html)
 
 ![ghcal](https://camo.githubusercontent.com/3c38e331250e8e5f75f9cca3f0bd94ad40a02079/687474703a2f2f692e696d6775722e636f6d2f797a456c475a4e2e706e67)
 
