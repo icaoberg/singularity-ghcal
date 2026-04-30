@@ -14,6 +14,7 @@ jobs:
 
     env:
       VERSION: 2.6.0
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - uses: actions/checkout@v4
