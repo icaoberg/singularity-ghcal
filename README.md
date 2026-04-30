@@ -1,6 +1,5 @@
 # ghcal
-[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/2337)
-[![Build Status](https://travis-ci.org/icaoberg/singularity-ghcal.svg?branch=master)](https://travis-ci.org/icaoberg/singularity-ghcal)
+[![Build Status](https://travis-ci.com/icaoberg/singularity-ghcal.svg?branch=master)](https://travis-ci.com/icaoberg/singularity-ghcal)
 [![GitHub issues](https://img.shields.io/github/issues/icaoberg/singularity-ghcal.svg)](https://github.com/icaoberg/singularity-ghcal/issues)
 [![GitHub forks](https://img.shields.io/github/forks/icaoberg/singularity-ghcal.svg)](https://github.com/icaoberg/singularity-ghcal/network)
 [![GitHub stars](https://img.shields.io/github/stars/icaoberg/singularity-ghcal.svg)](https://github.com/icaoberg/singularity-ghcal/stargazers)
@@ -9,16 +8,20 @@
 ![ghcal](https://camo.githubusercontent.com/3c38e331250e8e5f75f9cca3f0bd94ad40a02079/687474703a2f2f692e696d6775722e636f6d2f797a456c475a4e2e706e67)
 
 ## About
-Singularity recipe for [ghcal](https://github.com/IonicaBizau/ghcal).
+Singularity/Apptainer recipe for [ghcal](https://github.com/IonicaBizau/ghcal).
 
 ## Installation
 
-* Install [Singularity v2.6.+](https://sylabs.io/docs/).
-* Run the script `install.sh` included in this repository.
+* Install [Singularity](https://sylabs.io/docs/) or [Apptainer](https://apptainer.org/docs/).
+* Build the image using the script `build.sh` included in this repository.
+
+```bash
+bash build.sh
+```
 
 ## Help
 ```
-singularity run --app ghcal ghcal.simg --help
+singularity run --app ghcal singularity-ghcal.sif --help
 Usage: ghcal [options]
 
 Options:
@@ -46,7 +49,7 @@ Documentation can be found at https://github.com/IonicaBizau/ghcal
 
 ## Example
 ```
-singularity run --app ghcal ghcal.simg -u icaoberg
+singularity run --app ghcal singularity-ghcal.sif -u icaoberg
 
 ╔══════════════════════════════════════════════════════════════════════════════════╗
 ║        Jun       Jul     Aug     Sep       Oct     Nov     Dec       Jan     Feb ║
@@ -67,11 +70,9 @@ singularity run --app ghcal ghcal.simg -u icaoberg
 
 ## Disclaimer
 
-[![Wold you buy me some coffee?](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/icaoberg)
+[![Would you buy me some coffee?](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/icaoberg)
 
 I am nothing but a humble programmer creating the container for this wonderful app. Please visit the [original developer](https://github.com/IonicaBizau) for more info about the app.
 
 ---
-[![CBD](http://www.cbd.cmu.edu/wp-content/uploads/2017/07/wordpress-default.png)](http://www.cbd.cmu.edu)
-
-Copyleft © 2019 [icaoberg](http://www.andrew.cmu.edu/~icaoberg) at the [Computational Biology Department](http://www.cbd.cmu.edu) in [Carnegie Mellon University](http://www.cmu.edu)
+Copyright © 2026 [icaoberg](http://www.andrew.cmu.edu/~icaoberg) at [Carnegie Mellon University](http://www.cmu.edu)

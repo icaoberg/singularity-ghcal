@@ -1,29 +1,31 @@
 Bootstrap: docker
-From: ubuntu:16.04
-
-IncludeCmd: yes
+From: ubuntu:24.04
 
 %labels
     AUTHOR icaoberg
-    EMAIL icaoberg@alumni.cmu.edu
-    WEBSITE http://linus.cbd.cs.cmu.edu
+    EMAIL icaoberg@gmail.com
+    VERSION 1.0.0
+    COPYRIGHT Copyright (c) 2019 icaoberg, Carnegie Mellon University
+
+%environment
+    export DEBIAN_FRONTEND=noninteractive
+    export PATH=/usr/local/bin:$PATH
 
 %runscript
     exec /bin/bash "$@"
 
 %post
-    /usr/bin/apt-get update && apt-get install -y --no-install-recommends apt-utils
-    /usr/bin/apt-get update --fix-missing
-    /usr/bin/apt-get install -y curl nodejs npm
-    ln -s /usr/bin/nodejs /usr/bin/node
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update && apt-get install -y --no-install-recommends \
+        curl \
+        nodejs \
+        npm
+    apt-get clean && rm -rf /var/lib/apt/lists/*
     npm install --global ghcal
 
-    if [ ! -d /images ]; then mkdir /images; fi
-    if [ ! -d /projects ]; then mkdir /projects; fi
-    if [ ! -d /containers ]; then mkdir /containers; fi
-    if [ ! -d /share ]; then mkdir /share; fi
-    if [ ! -d /scratch ]; then mkdir /scratch; fi
-    if [ ! -d /webservers/pfenningweb ]; then mkdir -p /webservers/pfenningweb; fi
+    for dir in /images /projects /containers /share /scratch; do
+        [ -d "$dir" ] || mkdir -p "$dir"
+    done
 
 ####################################################################################
 %appenv ghcal
@@ -31,7 +33,7 @@ IncludeCmd: yes
     export APP
 
 %apphelp ghcal
-    For more information about goto visit https://github.com/IonicaBizau/ghcal
+    For more information about ghcal visit https://github.com/IonicaBizau/ghcal
 
 %apprun ghcal
     ghcal "$@"

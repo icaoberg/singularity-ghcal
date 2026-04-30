@@ -1,0 +1,39 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    env:
+      VERSION: 2.6.0
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libarchive-dev squashfs-tools
+
+      - name: Build and install Singularity
+        run: |
+          wget https://github.com/singularityware/singularity/releases/download/$VERSION/singularity-$VERSION.tar.gz
+          tar xvf singularity-$VERSION.tar.gz
+          cd singularity-$VERSION
+          ./configure --prefix=/usr/local
+          make
+          sudo make install
+
+      - name: Build image
+        run: bash ./build.sh
+
+      - name: Report image size
+        run: du -h singularity-ghcal.simg

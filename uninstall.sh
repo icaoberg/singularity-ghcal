@@ -1,4 +1,5 @@
 #!/bin/bash
+# Copyright (c) 2019 icaoberg, Carnegie Mellon University
 
 IMAGE=singularity-ghcal
 DIRECTORY=~/.singularity
