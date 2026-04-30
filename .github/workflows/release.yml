@@ -40,7 +40,7 @@ jobs:
           git push
 
       - name: Set up Apptainer
-        uses: apptainer/setup-apptainer@v2
+        uses: eWaterCycle/setup-apptainer@v2
 
       - name: Build image
         run: sudo apptainer build singularity-ghcal.sif Singularity
