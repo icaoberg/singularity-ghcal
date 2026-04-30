@@ -4,7 +4,7 @@
 IMAGE=singularity-ghcal
 DIRECTORY=~/.singularity
 
-FILES=($DIRECTORY/$IMAGE.simg ~/bin/ghcal)
+FILES=($DIRECTORY/$IMAGE.sif ~/bin/ghcal)
 
 for FILE in "${FILES[@]}"
 do
