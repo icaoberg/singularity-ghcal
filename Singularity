@@ -4,7 +4,7 @@ From: ubuntu:24.04
 %labels
     AUTHOR icaoberg
     EMAIL icaoberg@gmail.com
-    VERSION 1.0.0
+    VERSION 1.0.2
     COPYRIGHT Copyright (c) 2026 icaoberg
 
 %environment
