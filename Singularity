@@ -5,7 +5,7 @@ From: ubuntu:24.04
     AUTHOR icaoberg
     EMAIL icaoberg@gmail.com
     VERSION 1.0.0
-    COPYRIGHT Copyright (c) 2019 icaoberg, Carnegie Mellon University
+    COPYRIGHT Copyright (c) 2026 icaoberg
 
 %environment
     export DEBIAN_FRONTEND=noninteractive
