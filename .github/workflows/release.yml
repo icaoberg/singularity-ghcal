@@ -21,15 +21,22 @@ jobs:
         run: |
           LATEST=$(gh release list --limit 1 --json tagName -q '.[0].tagName' 2>/dev/null || echo "")
           if [ -z "$LATEST" ] || [ "$LATEST" = "null" ]; then
-            NEXT="0.1"
+            NEXT="v1.0.0"
           else
-            NEXT=$(python3 -c "v=float('${LATEST}'); print(f'{v+0.1:.1f}')")
+            NEXT=$(python3 -c "
+v = '${LATEST}'.lstrip('v')
+parts = v.split('.')
+parts[-1] = str(int(parts[-1]) + 1)
+print('v' + '.'.join(parts))
+")
           fi
           echo "version=$NEXT" >> $GITHUB_OUTPUT
 
       - name: Update VERSION in Singularity definition
         run: |
-          sed -i "s/^\(    VERSION \).*/\1${{ steps.version.outputs.version }}/" Singularity
+          VERSION_BARE="${{ steps.version.outputs.version }}"
+          VERSION_BARE="${VERSION_BARE#v}"
+          sed -i "s/^\(    VERSION \).*/\1${VERSION_BARE}/" Singularity
 
       - name: Commit and push version bump
         run: |
@@ -51,5 +58,5 @@ jobs:
         run: |
           gh release create "${{ steps.version.outputs.version }}" \
             singularity-ghcal.sif \
-            --title "v${{ steps.version.outputs.version }}" \
+            --title "${{ steps.version.outputs.version }}" \
             --generate-notes
